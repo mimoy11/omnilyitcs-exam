@@ -21,6 +21,14 @@ $ git checkout master
 $ docker-compose up -d --build
 ```
 
+**Setup the database:**
+```
+$ docker-compose exec mongodb /bin/sh
+$ mongo -u admin -p password
+> use webapp
+> db.createUser({user: 'apiuser', pwd: 'apipassword', roles: [{role: 'readWrite', db: 'webapp'}]})
+```
+
 ## Usage
 
 **Running the application in development w/ watch mode**

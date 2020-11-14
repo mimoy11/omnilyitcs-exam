@@ -12,7 +12,8 @@ This repository contains example code showing how to to set up and containerize 
 
 ```
 $ git clone git@github.com:mimoy11/omnilyitcs-exam.git
-$ cd master
+$ cd omnilyitcs-exam
+$ git checkout master
 ```
 
 **Build the images and start docker:**

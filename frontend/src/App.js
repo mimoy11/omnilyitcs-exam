@@ -14,8 +14,21 @@ class App extends React.Component {
         };
     }
 
+    componentDidMount () {
+        this._isMounted = true;
+    }
+
+    componentWillUnmount () {
+        this._isMounted = false;
+    } 
+
     onSubmit = ( name, e ) => {
         e.preventDefault();
+
+        if ( !this._isMounted ) {
+            return false;
+        }
+
         let options = {
             method: 'POST',
             mode: 'cors',
